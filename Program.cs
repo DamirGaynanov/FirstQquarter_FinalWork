@@ -15,19 +15,20 @@ string text4 = Console.ReadLine() ?? "";
 string[] arrText = { text1, text2, text3, text4 };
 PrintArray(arrText);
 
+
 void PrintArray(string[] arrayText)
 {
-    Console.Write("[");
+    Console.Write($"[{text1}, {text2}, {text3}, {text4}] -> [");
     for (int i = 0; i < arrayText.Length; i++)
     {
         string str = arrayText[i];
-        if (i < arrayText.Length - 1)
+        if (i < arrayText.Length - 2)
         {
-           if (str.Length <= 3) Console.Write($"{arrayText[i]},");
+            if (str.Length <= 3) Console.Write($"{arrayText[i]},");
         }
         else
         {
-           if (str.Length <= 3) Console.Write($"{arrayText[i]}");
+            if (str.Length <= 3) Console.Write($"{arrayText[i]}");
         }
     }
     Console.Write("]");
