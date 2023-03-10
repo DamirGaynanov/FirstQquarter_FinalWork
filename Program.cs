@@ -4,47 +4,47 @@
 // либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями,
 // лучше обойтись исключительно массивами
 
-Console.WriteLine("Input Text 1");
-string text1 = Console.ReadLine() ?? "";
-Console.WriteLine("Input Text 2");
-string text2 = Console.ReadLine() ?? "";
-Console.WriteLine("Input Text 3");
-string text3 = Console.ReadLine() ?? "";
-Console.WriteLine("Input Text 4");
-string text4 = Console.ReadLine() ?? "";
+// Console.WriteLine("Input Text 1");
+// string text1 = Console.ReadLine() ?? "";
+// Console.WriteLine("Input Text 2");
+// string text2 = Console.ReadLine() ?? "";
+// Console.WriteLine("Input Text 3");
+// string text3 = Console.ReadLine() ?? "";
+// Console.WriteLine("Input Text 4");
+// string text4 = Console.ReadLine() ?? "";
 
-string[] array1 = new string[] { text1, text2,  text3, text4};
-string[] array2 = new string[array1.Length];
-arraySelective(array1, array2);
-Console.Write($"[");
-for (int i = 0; i < array1.Length; i++)
+// string[] inputArray = new string[] { text1, text2, text3, text4 };
+
+string[] inputArray = new string[] {"hi", "bolt", "dog" , "robot"};
+string[] outputArray= arraySelective(inputArray);
+PrintArray(inputArray);
+Console.Write($" -> ");
+PrintArray(outputArray);
+
+string[] arraySelective(string[] arr1)
 {
-    if (i < array1.Length-1) Console.Write($"{array1[i]}, ");
-    else Console.Write($"{array1[i]}] -> ");
-}
-PrintArray(array2);
-
-void arraySelective(string[] arr1, string[] arr2)
-{ 
+    string[] resultArray = new string[arr1.Length];
     int j = 0;
     for (int i = 0; i < arr1.Length; i++)
     {
         string str = arr1[i];
-        if (str.Length <= 3) 
+        if (str.Length <= 3)
         {
-            arr2[j] = arr1[i];
+            resultArray[j] = str;
             j++;
         }
     }
+    Array.Resize(ref resultArray, j);
+    return resultArray;
 }
 
 void PrintArray(string[] array)
 {
-
+    Console.Write(array.Length);
     Console.Write($"[");
     for (int i = 0; i < array.Length; i++)
     {
-        if (i < array.Length - 2) Console.Write($"{array[i]}, ");
+        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
         else Console.Write($"{array[i]}");
     }
     Console.Write($"]");
