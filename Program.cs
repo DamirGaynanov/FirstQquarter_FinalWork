@@ -4,18 +4,16 @@
 // либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями,
 // лучше обойтись исключительно массивами
 
-// Console.WriteLine("Input Text 1");
-// string text1 = Console.ReadLine() ?? "";
-// Console.WriteLine("Input Text 2");
-// string text2 = Console.ReadLine() ?? "";
-// Console.WriteLine("Input Text 3");
-// string text3 = Console.ReadLine() ?? "";
-// Console.WriteLine("Input Text 4");
-// string text4 = Console.ReadLine() ?? "";
+Console.WriteLine("Input Text 1");
+string text1 = Console.ReadLine() ?? "";
+Console.WriteLine("Input Text 2");
+string text2 = Console.ReadLine() ?? "";
+Console.WriteLine("Input Text 3");
+string text3 = Console.ReadLine() ?? "";
+Console.WriteLine("Input Text 4");
+string text4 = Console.ReadLine() ?? "";
 
-// string[] inputArray = new string[] { text1, text2, text3, text4 };
-
-string[] inputArray = new string[] {"hi", "bolt", "dog" , "robot"};
+string[] inputArray = new string[] { text1, text2, text3, text4 };
 string[] outputArray= arraySelective(inputArray);
 PrintArray(inputArray);
 Console.Write($" -> ");
@@ -40,7 +38,6 @@ string[] arraySelective(string[] arr1)
 
 void PrintArray(string[] array)
 {
-    Console.Write(array.Length);
     Console.Write($"[");
     for (int i = 0; i < array.Length; i++)
     {
